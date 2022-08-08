@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    History
+{% endblock %}
+
+{% block main %}
+    <main class="container py-4 text-center">
+        <table class="table tablestriped">
+            <thead>
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-end">Shares</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">Transacted</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td>{{ row.symbol }}</td>
+                        <td>{{ row.numshares }}</td>
+                        <td>{{ row.price }}</td>
+                        <td>{{ row.time }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+{% endblock %}
